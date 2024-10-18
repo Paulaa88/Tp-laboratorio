@@ -354,3 +354,54 @@
 1729033778 source:c:\users\paula\downloads\tp final final\validaciones.c
 	"Validaciones.h"
 
+1729278398 source:c:\users\paula\downloads\pre entrega tp laboratorio\adminusuarios.c
+	"adminUsuarios.h"
+
+1729273033 c:\users\paula\downloads\pre entrega tp laboratorio\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1729033756 c:\users\paula\downloads\pre entrega tp laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729278398 source:c:\users\paula\downloads\pre entrega tp laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"menu.h"
+
+1729274220 c:\users\paula\downloads\pre entrega tp laboratorio\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	"adminUsuarios.h"
+
+1729278337 source:c:\users\paula\downloads\pre entrega tp laboratorio\menu.c
+	"menu.h"
+
+1729033778 source:c:\users\paula\downloads\pre entrega tp laboratorio\validaciones.c
+	"Validaciones.h"
+
+1729274772 source:c:\users\paula\downloads\pre entrega tp laboratorio\libros.c
+
+1729175592 c:\users\paula\downloads\pre entrega tp laboratorio\libros.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"adminUsuarios.h"
+

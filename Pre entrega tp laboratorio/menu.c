@@ -156,11 +156,6 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
     fgets(usuario.domicilio.ciudad, sizeof(usuario.domicilio.ciudad), stdin);
     usuario.domicilio.ciudad[strcspn(usuario.domicilio.ciudad, "\n")] = 0;
 
-    printf("Ingrese la localidad: \n");
-    fflush(stdin);
-    fgets(usuario.domicilio.localidad, sizeof(usuario.domicilio.localidad), stdin);
-    usuario.domicilio.localidad[strcspn(usuario.domicilio.localidad, "\n")] = 0;
-
     printf("Ingrese el pais: \n");
     fflush(stdin);
     fgets(usuario.domicilio.pais, sizeof(usuario.domicilio.pais), stdin);
@@ -169,6 +164,10 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
     usuario = cargarContraseniaRegistro(usuario);
 
     usuario.eliminado= 0;
+    for (int i = 0; i < 50; i++) {
+        usuario.librosFavoritos[i] = 0;
+        }
+
     usuario.idUsuario = generarIdUsuarios(*listaUsuarios);
 
     nodoUsuarios *nuevoNodo = crearNodoUsuario(usuario);
@@ -231,11 +230,11 @@ stUsuario cargarContraseniaRegistro(stUsuario usuario)
         fflush(stdin);
         gets(confirmacion);
 
-        if (!validarContrasenia(contrasenia, confirmacion)) // Validar coincidencia de contraseñas
+        if (!validarContrasenia(contrasenia, confirmacion))
         {
             printf("Las contrasenias no coinciden\n");
         }
-        else if (!validarMayusculaMinuscula(contrasenia)) // Validar que contenga mayúsculas y minúsculas
+        else if (!validarMayusculaMinuscula(contrasenia))
         {
             printf("La contrasenia debe tener al menos una mayuscula y una minuscula\n");
         }
@@ -365,7 +364,6 @@ void menuAdministrador() {
                 system("cls");
                 break;
             case 4:
-                printf("LISTA DE LIBROS: \n");
                 elegirListaAVerLibros(listaLibros);
                 system("pause");
                 system("cls");
@@ -481,6 +479,7 @@ void modificarInformacionPersonal(nodoUsuarios* usuario)
 /// Cargar libros desde el archivo al iniciar
 void menuLibros(nodoUsuarios * usuarioLogueado, nodoLibros * listaLibros)
 {
+    nodoLibros * aux=NULL;
     int opcion;
     do
     {
@@ -497,25 +496,27 @@ void menuLibros(nodoUsuarios * usuarioLogueado, nodoLibros * listaLibros)
         switch(opcion)
         {
         case 1:
-            listaLibros=buscarLibroPorCategoria(listaLibros);
+            aux=buscarLibroPorCategoria(listaLibros);
+            mostrarUnLibro(aux);
             system("pause");
             system("cls");
             break;
         case 2:
-            listaLibros=buscarLibroPorAutor(listaLibros);
+            aux=buscarLibroPorAutor(listaLibros);
+            mostrarListaLibros(aux);
             system("pause");
            system("cls");
             break;
         case 3:
-            listaLibros=buscarLibroPorTitulo(listaLibros);
+            aux=buscarLibroPorTitulo(listaLibros);
+            mostrarUnLibro(aux);
             system("pause");
             system("cls");
             break;
         case 4:
-            mostrarListaLibros(listaLibros);
+            printf("\n LISTADO DE LIBROS\n");
+            mostrarListaLibrosActivos(listaLibros);
             int idLibro;
-            printf("Ingrese el ID del libro que quiere agregar/quitar de favoritos: ");
-            scanf("%d", &idLibro);
             gestionarLibrosFavoritos(usuarioLogueado, listaLibros);
 
             break;
@@ -537,9 +538,8 @@ void menuLibros(nodoUsuarios * usuarioLogueado, nodoLibros * listaLibros)
 }
 
 
-
 void guardarUsuariosEnArchivo(nodoUsuarios *listaUsuarios) {
-    FILE *archivo = fopen(ARCHIVO_USUARIOS, "wb"); // Abrir el archivo en modo escritura binaria
+    FILE *archivo = fopen(ARCHIVO_USUARIOS, "wb");
     if (!archivo) {
         printf("Error al abrir el archivo de usuarios.\n");
         return;
@@ -547,17 +547,16 @@ void guardarUsuariosEnArchivo(nodoUsuarios *listaUsuarios) {
 
     nodoUsuarios *aux = listaUsuarios;
 
-    // Recorrer la lista y escribir cada nodo en el archivo
     while (aux != NULL) {
         fwrite(&aux->datosUsuarios, sizeof(stUsuario), 1, archivo);
         aux = aux->sig;
     }
 
-    fclose(archivo); // Cerrar el archivo al finalizar
+    fclose(archivo);
 }
 
 void guardarLibrosEnArchivo(nodoLibros *listaLibros) {
-    FILE *archivo = fopen(ARCHIVO_LIBROS, "wb"); // Abrir el archivo en modo escritura binaria
+    FILE *archivo = fopen(ARCHIVO_LIBROS, "wb");
     if (!archivo) {
         printf("Error al abrir el archivo de libros.\n");
         return;
@@ -565,13 +564,12 @@ void guardarLibrosEnArchivo(nodoLibros *listaLibros) {
 
     nodoLibros *aux = listaLibros;
 
-    // Recorrer la lista y escribir cada nodo en el archivo
     while (aux != NULL) {
         fwrite(&aux->datosLibros, sizeof(stLibro), 1, archivo);
         aux = aux->sig;
     }
 
-    fclose(archivo); // Cerrar el archivo al finalizar
+    fclose(archivo);
 }
 
 

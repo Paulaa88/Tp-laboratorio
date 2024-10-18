@@ -6,10 +6,8 @@
 #include <string.h>
 #include <conio.h>
 #include <string.h>
-#include <time.h>
 
 #include "adminUsuarios.h"
-#include "Libros.h"
 
 #define ARCHIVO_USUARIOS "usuarios.dat"
 #define ARCHIVO_LIBROS "libros.dat"

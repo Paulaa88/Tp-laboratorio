@@ -403,22 +403,20 @@ nodoLibros* bajaDelLibro(nodoLibros * listaLibros) {
                 break;
             default:
                 printf("\nOpcion invalida\n");
-                return listaLibros;  // Salimos si la opción es inválida
+                return listaLibros;
         }
 
         if (librosEncontrados != NULL) {
             printf("\nLibros encontrados:\n");
-            mostrarListaLibros(librosEncontrados);  // Función que muestra la lista de libros filtrada
+            mostrarListaLibros(librosEncontrados);
 
-            // Solicitar ID del libro a eliminar
             printf("\nIngrese el ID del libro que desea eliminar: ");
             scanf("%d", &idLibro);
 
-            // Buscar libro por ID en la lista de libros encontrados
             aux = buscarLibroPorId(librosEncontrados, idLibro);
 
             if (aux != NULL) {
-                aux->datosLibros.eliminado = -1;  // Eliminado lógicamente
+                aux->datosLibros.eliminado = -1;
                 printf("\nLibro dado de baja exitosamente: %s (ID: %d)\n", aux->datosLibros.titulo, aux->datosLibros.idLibro);
             } else {
                 printf("\nNo se encontro el libro con el ID proporcionado.\n");
@@ -539,6 +537,7 @@ nodoLibros * buscarLibroPorCategoria(nodoLibros * listaLibros)
     return categoria;
 }
 
+
 int generarIdLibros(nodoLibros * listaLibros)
 {
      int id = 0;
@@ -646,11 +645,11 @@ void gestionarLibrosFavoritos(nodoUsuarios *usuarioLogueado, nodoLibros *listaLi
         }
 
         int libroAQuitar;
-        printf("Ingrese el número del libro a quitar (1-%d):\n", usuarioLogueado->datosUsuarios.validosLibrosFavs);
+        printf("Ingrese el numero del libro a quitar (1-%d):\n", usuarioLogueado->datosUsuarios.validosLibrosFavs);
         scanf("%d", &libroAQuitar);
 
         if (libroAQuitar < 1 || libroAQuitar > usuarioLogueado->datosUsuarios.validosLibrosFavs) {
-            printf("Opción no válida.\n");
+            printf("Opcion no valida.\n");
             return;
         }
 
@@ -663,7 +662,7 @@ void gestionarLibrosFavoritos(nodoUsuarios *usuarioLogueado, nodoLibros *listaLi
 
         printf("Libro %s quitado de favoritos.\n", buscarLibroPorId(listaLibros, idLibroAQuitar)->datosLibros.titulo);
     } else {
-        printf("Opción no válida.\n");
+        printf("Opcion no valida.\n");
     }
 }
 
@@ -682,7 +681,7 @@ void quitarLibroFavorito(stUsuario* usuario, int idLibro)
         for (int i = indice; i < usuario->validosLibrosFavs - 1; i++) {
             usuario->librosFavoritos[i] = usuario->librosFavoritos[i + 1];
         }
-        usuario->validosLibrosFavs--;  // Disminuir el contador de libros favoritos
+        usuario->validosLibrosFavs--;
         printf("Libro con ID %d eliminado de favoritos.\n", idLibro);
     } else {
         printf("El libro con ID %d no se encuentra en los favoritos.\n", idLibro);
@@ -698,7 +697,7 @@ nodoLibros* buscarLibroPorId(nodoLibros* listaLibros, int idLibro)
         }
         aux = aux->sig;
     }
-    return NULL; // No encontrado o eliminado
+    return NULL;
 }
 
 

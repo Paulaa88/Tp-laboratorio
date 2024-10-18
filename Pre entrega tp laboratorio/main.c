@@ -68,12 +68,11 @@ void cargarUsuariosAleatorios(int cantidad) {
         strcat(nuevoUsuario.email, "@mail.com");
         generarStringAleatorio(nuevoUsuario.password, 8);
         generarStringAleatorio(nuevoUsuario.username, 8);
-        nuevoUsuario.esAdmin = rand() % 2; // 0 o 1 aleatoriamente
+        nuevoUsuario.esAdmin = rand() % 2;
         nuevoUsuario.genero = (rand() % 2 == 0) ? 'M' : 'F';
         sprintf(nuevoUsuario.fechaNacimiento, "%02d/%02d/%04d", rand() % 30 + 1, rand() % 12 + 1, 1990 + rand() % 30);
         sprintf(nuevoUsuario.dni, "%08d", rand() % 100000000);
 
-        // Domicilio aleatorio
         generarStringAleatorio(nuevoUsuario.domicilio.calle, 8);
         nuevoUsuario.domicilio.altura = rand() % 2000 + 1;
         nuevoUsuario.domicilio.cp = rand() % 9000 + 1000;
