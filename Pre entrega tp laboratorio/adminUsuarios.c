@@ -4,6 +4,8 @@
 void mostrarUnUsuario(nodoUsuarios* usuario) {
     if (usuario)
     {
+        printf("\n -----------------------\n");
+
         printf("ID Usuario: %d\n", usuario->datosUsuarios.idUsuario);
         printf("Username: %s\n", usuario->datosUsuarios.username);
         printf("Email: %s\n", usuario->datosUsuarios.email);
@@ -11,10 +13,12 @@ void mostrarUnUsuario(nodoUsuarios* usuario) {
         printf("Gebanero: %c\n", usuario->datosUsuarios.genero);
         printf("Fecha de Nacimiento: %s\n", usuario->datosUsuarios.fechaNacimiento);
         printf("Domicilio: %s %d\n", usuario->datosUsuarios.domicilio.calle, usuario->datosUsuarios.domicilio.altura);
-        printf("Localidad: %s\n", usuario->datosUsuarios.domicilio.localidad);
         printf("Codigo Postal: %d\n", usuario->datosUsuarios.domicilio.cp);
         printf("Ciudad: %s\n", usuario->datosUsuarios.domicilio.ciudad);
         printf("Pais: %s\n", usuario->datosUsuarios.domicilio.pais);
+
+        printf("\n -----------------------\n");
+
     }
 }
 /// Ver listado de todos los usuarios
@@ -25,6 +29,7 @@ void mostrarListaUsuarios (nodoUsuarios * listaUsuarios)
     {
         mostrarUnUsuario (listaUsuarios);
         listaUsuarios = listaUsuarios->sig;
+
     }
 }
 /// Ver listado solo de usuarios activos
@@ -434,12 +439,15 @@ nodoLibros* bajaDelLibro(nodoLibros * listaLibros) {
 void mostrarUnLibro(nodoLibros* listaLibros)
 {
     if (listaLibros) {
+        printf("\n -----------------------\n");
         printf ("ID Libro: %i\n", listaLibros->datosLibros.idLibro);
         printf ("Titulo: %s\n", listaLibros->datosLibros.titulo);
         printf("Editorial: %s\n", listaLibros->datosLibros.editorial);
         printf("Autor: %s\n", listaLibros->datosLibros.autor);
         printf("Categoria: %s\n", listaLibros->datosLibros.categoria);
         printf("Valoracion: %f %d\n", listaLibros->datosLibros.valoracion);
+        printf("\n -----------------------\n");
+
     }
 }
 

@@ -34,7 +34,8 @@ int menu()
             break;
         case 3:
             system("cls");
-
+            guardarLibrosEnArchivo(listaLibros);
+            guardarUsuariosEnArchivo(listaUsuarios);
             printf("Saliendo del programa...\n");
             break;
         default:

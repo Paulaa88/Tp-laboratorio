@@ -24,16 +24,16 @@ int main()
     printf("\n");
     printf("\n");
 
-    printf("--------------------------------- TU BIBLIOTECA PREFERIDA ---------------------------------\n");
+    printf("---------------------------------------- TU BIBLIOTECA PREFERIDA -----------------------------------------------\n");
 
     srand(time(NULL));
 
-    int cantidadUsuarios = 20;
-    int cantidadLibros = 50;
+    //int cantidadUsuarios = 20;
+    //int cantidadLibros = 50;
 
-    cargarUsuariosAleatorios(cantidadUsuarios);
+    //cargarUsuariosAleatorios(cantidadUsuarios);
 
-    cargarLibrosAleatorios(cantidadLibros);
+    //cargarLibrosAleatorios(cantidadLibros);
 
 
 
