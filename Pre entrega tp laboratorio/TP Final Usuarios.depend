@@ -1,0 +1,356 @@
+# depslib dependency file v1.0
+1725928771 source:c:\users\ana\desktop\regi fuck u\prog 2024\lab 2\tp final usuarios\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"usuariosAdmin.h"
+
+1725928809 c:\users\ana\desktop\regi fuck u\prog 2024\lab 2\tp final usuarios\usuariosadmin.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"string.h"
+
+1725928771 source:c:\users\ana\desktop\regi fuck u\prog 2024\lab 2\usuarios admin\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"usuariosAdmin.h"
+
+1726093962 c:\users\ana\desktop\regi fuck u\prog 2024\lab 2\usuarios admin\usuariosadmin.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"string.h"
+
+1726152503 source:c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\libros.c
+	"Libros.h"
+
+1728078357 source:c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\usuarios.c
+	"Usuarios.h"
+
+1728078357 source:c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\validaciones.c
+	"Validaciones.h"
+
+1728078357 source:c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"usuariosAdmin.h"
+	"Usuarios.h"
+	"Libros.h"
+
+1728078357 c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\usuariosadmin.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1728078357 c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\usuarios.h
+
+1728083816 c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\libros.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1728076351 c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1728083245 source:c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\menu.c
+	"menu.h"
+
+1728083245 c:\users\paula\documents\github\tp-libros-y-usuarios\primer-borrador\menu.h
+
+1728117764 source:c:\users\paula\desktop\borrador 2\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Libros.h"
+
+1728117764 c:\users\paula\desktop\borrador 2\libros.h
+
+1728118247 source:c:\users\paula\desktop\borrador 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"usuariosAdmin.h"
+	"Usuarios.h"
+	"Libros.h"
+	"Validaciones.h"
+	"menu.h"
+
+1728117764 c:\users\paula\desktop\borrador 2\usuariosadmin.h
+
+1728078357 c:\users\paula\desktop\borrador 2\usuarios.h
+
+1728078357 source:c:\users\paula\desktop\borrador 2\usuarios.c
+	"Usuarios.h"
+
+1728116103 source:c:\users\paula\desktop\borrador 2\validaciones.c
+	"Validaciones.h"
+	"Usuarios.h"
+	"ctype.h"
+
+1728116091 c:\users\paula\desktop\borrador 2\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"ctype.h"
+
+1728117866 c:\users\paula\desktop\borrador 2\menu.h
+
+1728889071 source:c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Libros.h"
+
+1728889071 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\libros.h
+
+1728894346 source:c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"usuariosAdmin.h"
+	"Libros.h"
+	"Validaciones.h"
+	"menu.h"
+
+1728893656 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\usuariosadmin.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+
+1728296291 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\usuarios.h
+	"usuariosAdmin.h"
+
+1728666328 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\validaciones.h
+
+1728887745 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\menu.h
+	"Libros.h"
+	"usuariosAdmin.h"
+
+1728294206 source:c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\usuarios.c
+	"Usuarios.h"
+
+1728709766 source:c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1728889301 source:c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	"menu.h"
+	"usuariosAdmin.h"
+	"Validaciones.h"
+	"Libros.h"
+
+1728293298 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"menu.h"
+	"usuariosAdmin.h"
+	"Libros.h"
+
+1728667297 c:\users\paula\desktop\programacion\laboratorio 2\tp final mi parte\usuariosadmin.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"usuariosAdmin.h"
+	"Libros.h"
+	"Validaciones.h"
+	"menu.h"
+
+1729033836 source:c:\users\alumno\desktop\nueva carpeta\tp final mi parte\libros.c
+	"Libros.h"
+
+1729033845 c:\users\alumno\desktop\nueva carpeta\tp final mi parte\libros.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729034983 source:c:\users\alumno\desktop\nueva carpeta\tp final mi parte\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"menu.h"
+
+1729034194 c:\users\alumno\desktop\nueva carpeta\tp final mi parte\usuariosadmin.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Libros.h"
+	"Validaciones.h"
+
+1729033754 c:\users\alumno\desktop\nueva carpeta\tp final mi parte\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729034944 c:\users\alumno\desktop\nueva carpeta\tp final mi parte\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"adminUsuarios.h"
+
+1729034049 source:c:\users\alumno\desktop\nueva carpeta\tp final mi parte\menu.c
+	"menu.h"
+
+1729033776 source:c:\users\alumno\desktop\nueva carpeta\tp final mi parte\validaciones.c
+	"Validaciones.h"
+
+1729034843 c:\users\alumno\desktop\nueva carpeta\tp final mi parte\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Libros.h"
+	"Validaciones.h"
+
+1729035021 source:c:\users\alumno\desktop\nueva carpeta\tp final mi parte\adminusuarios.c
+	"adminUsuarios.h"
+
+1729200148 source:c:\users\paula\downloads\tp final mi parte\adminusuarios.c
+	"adminUsuarios.h"
+
+1729200810 c:\users\paula\downloads\tp final mi parte\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1729175592 c:\users\paula\downloads\tp final mi parte\libros.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"adminUsuarios.h"
+
+1729033756 c:\users\paula\downloads\tp final mi parte\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729175592 source:c:\users\paula\downloads\tp final mi parte\libros.c
+	"Libros.h"
+
+1729201137 source:c:\users\paula\downloads\tp final mi parte\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"menu.h"
+
+1729177456 c:\users\paula\downloads\tp final mi parte\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"adminUsuarios.h"
+	"Libros.h"
+
+1729200772 source:c:\users\paula\downloads\tp final mi parte\menu.c
+	"menu.h"
+
+1729033778 source:c:\users\paula\downloads\tp final mi parte\validaciones.c
+	"Validaciones.h"
+
+1729273684 source:c:\users\paula\downloads\tp final final\adminusuarios.c
+	"adminUsuarios.h"
+
+1729273033 c:\users\paula\downloads\tp final final\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1729033756 c:\users\paula\downloads\tp final final\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729175592 source:c:\users\paula\downloads\tp final final\libros.c
+	"Libros.h"
+
+1729175592 c:\users\paula\downloads\tp final final\libros.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"adminUsuarios.h"
+
+1729273651 source:c:\users\paula\downloads\tp final final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"menu.h"
+
+1729273084 c:\users\paula\downloads\tp final final\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"adminUsuarios.h"
+	"Libros.h"
+
+1729273559 source:c:\users\paula\downloads\tp final final\menu.c
+	"menu.h"
+
+1729033778 source:c:\users\paula\downloads\tp final final\validaciones.c
+	"Validaciones.h"
+
