@@ -55,23 +55,29 @@ void mostrarMenuPrincipal()
     printf("3. Salir\n");
 }
 
-void registrarUsuario(nodoUsuarios **listaUsuarios) {
+void registrarUsuario(nodoUsuarios **listaUsuarios)
+{
     stUsuario usuario;
     char username[20];
     char email[100];
+    char dni[10];
     char opcionStr[10];
+    char fechaNacimiento[20];
+    char alturaStr[10];
     int rta = 0;
     int correcto = 0;
     int opcion = 0;
 
-    do {
+    do
+    {
         printf("Ingrese su Nombre de Usuario:  \n");
         fflush(stdin);
         fgets(username, sizeof(username), stdin);
         username[strcspn(username, "\n")] = 0;
         rta = verificarUsuarioExistente(*listaUsuarios, username);
 
-        if (rta == 1) {
+        if (rta == 1)
+        {
             printf("El nombre de usuario ya existe.\n");
             printf("1. Intentar de nuevo\n");
             printf("2. Salir\n");
@@ -79,15 +85,18 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
             fflush(stdin);
             fgets(opcionStr, sizeof(opcionStr), stdin);
             opcion = atoi(opcionStr);
-            if (opcion == 2) {
+            if (opcion == 2)
+            {
                 printf("Registro cancelado.\n");
                 return;
             }
         }
-    } while (rta == 1);
+    }
+    while (rta == 1);
     strcpy(usuario.username, username);
 
-    do {
+    do
+    {
         printf("Ingrese su email:  \n");
         fflush(stdin);
         fgets(email, sizeof(email), stdin);
@@ -95,7 +104,8 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
 
         correcto = validarMail(email);
 
-        if (correcto != 1) {
+        if (correcto != 1)
+        {
             printf("Formato de email invalido. Debe contener un @ y .com.\n");
             printf("1. Intentar de nuevo\n");
             printf("2. Salir\n");
@@ -104,7 +114,8 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
             fgets(opcionStr, sizeof(opcionStr), stdin);
             opcion = atoi(opcionStr);
 
-            if (opcion == 2) {
+            if (opcion == 2)
+            {
                 printf("Registro cancelado.\n");
                 system("cls");
                 return;
@@ -112,7 +123,8 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
         }
         rta = verificarEmailExistente(*listaUsuarios, email);
 
-        if (rta == 1) {
+        if (rta == 1)
+        {
             printf("El email ya se encuentra registrado.\n");
             printf("1. Intentar de nuevo\n");
             printf("2. Salir\n");
@@ -120,34 +132,110 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
             fflush(stdin);
             fgets(opcionStr, sizeof(opcionStr), stdin);
             opcion = atoi(opcionStr);
+            if (opcion == 2)
+            {
+                printf("Registro cancelado.\n");
+                return;
+            }
+        }
+    }
+    while (rta == 1 || correcto != 1);
+    strcpy(usuario.email, email);
+
+    do {
+    printf("Ingrese su DNI: \n");
+    fflush(stdin);
+    gets(dni);
+
+    if (verificarDniExistente(*listaUsuarios, dni)) {
+        printf("El DNI ingresado ya existe. Intente nuevamente.\n");
+        printf("1. Intentar de nuevo\n");
+        printf("2. Salir\n");
+        printf("Elija una opción: ");
+        fflush(stdin);
+        fgets(opcionStr, sizeof(opcionStr), stdin);
+        opcion = atoi(opcionStr);
+
+        if (opcion == 2) {
+            printf("Registro cancelado.\n");
+            return;
+        }
+    } else {
+        strcpy(usuario.dni, dni);
+        break;
+    }
+} while (1);
+
+    do {
+        printf("Ingrese su fecha de nacimiento (dd/mm/aaaa): \n");
+        fflush(stdin);
+        fgets(fechaNacimiento, sizeof(fechaNacimiento), stdin);
+        fechaNacimiento[strcspn(fechaNacimiento, "\n")] = 0;
+
+        if (!validarFechaNacimiento(fechaNacimiento)) {
+            printf("Formato de fecha no valido. Debe ser en formato dd/mm/aaaa.\n");
+            printf("1. Intentar de nuevo\n");
+            printf("2. Salir\n");
+            printf("Elija una opcion: ");
+            fflush(stdin);
+            fgets(opcionStr, sizeof(opcionStr), stdin);
+            opcion = atoi(opcionStr);
+
             if (opcion == 2) {
                 printf("Registro cancelado.\n");
                 return;
             }
         }
-    } while (rta == 1 || correcto != 1);
-    strcpy(usuario.email, email);
+        } while (!validarFechaNacimiento(fechaNacimiento));
+        strcpy(usuario.fechaNacimiento, fechaNacimiento);
 
-    printf("Ingrese su DNI: \n");
-    fflush(stdin);
-    fgets(usuario.dni, sizeof(usuario.dni), stdin);
-    usuario.dni[strcspn(usuario.dni, "\n")] = 0;
+    do {
+        printf("Ingrese su genero (M/F/O): \n");
+        scanf(" %c", &usuario.genero);
 
-    printf("Ingrese su fecha de nacimiento (dd/mm/aaaa): \n");
-    fflush(stdin);
-    fgets(usuario.fechaNacimiento, sizeof(usuario.fechaNacimiento), stdin);
-    usuario.fechaNacimiento[strcspn(usuario.fechaNacimiento, "\n")] = 0;
+        if (!validarGenero(usuario.genero)) {
+            printf("Opcion de genero no valida. Debe ser M, F, o O.\n");
+            printf("1. Intentar de nuevo\n");
+            printf("2. Salir\n");
+            printf("Elija una opcion: ");
+            fflush(stdin);
+            fgets(opcionStr, sizeof(opcionStr), stdin);
+            opcion = atoi(opcionStr);
 
-    printf("Ingrese su genero (M/F/O): \n");
-    scanf(" %c", &usuario.genero);
+            if (opcion == 2) {
+                printf("Registro cancelado.\n");
+                return;
+            }
+        }
+    } while (!validarGenero(usuario.genero));
 
     printf("Ingrese su calle: \n");
     fflush(stdin);
     fgets(usuario.domicilio.calle, sizeof(usuario.domicilio.calle), stdin);
     usuario.domicilio.calle[strcspn(usuario.domicilio.calle, "\n")] = 0;
 
-    printf("Ingrese la altura de su domicilio: \n");
-    scanf("%d", &usuario.domicilio.altura);
+    do {
+        printf("Ingrese la altura de su domicilio: \n");
+        fflush(stdin);
+        fgets(alturaStr, sizeof(alturaStr), stdin);
+        alturaStr[strcspn(alturaStr, "\n")] = 0;
+
+        if (!validarAltura(alturaStr)) {
+            printf("Altura no valida. Debe ingresar solo numeros.\n");
+            printf("1. Intentar de nuevo\n");
+            printf("2. Salir\n");
+            printf("Elija una opcion: ");
+            fflush(stdin);
+            fgets(opcionStr, sizeof(opcionStr), stdin);
+            opcion = atoi(opcionStr);
+
+            if (opcion == 2) {
+                printf("Registro cancelado.\n");
+                return;
+            }
+        }
+    } while (!validarAltura(alturaStr));
+    usuario.domicilio.altura = atoi(alturaStr);
 
     printf("Ingrese el codigo postal: \n");
     scanf("%d", &usuario.domicilio.cp);
@@ -165,9 +253,10 @@ void registrarUsuario(nodoUsuarios **listaUsuarios) {
     usuario = cargarContraseniaRegistro(usuario);
 
     usuario.eliminado= 0;
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 50; i++)
+    {
         usuario.librosFavoritos[i] = 0;
-        }
+    }
 
     usuario.idUsuario = generarIdUsuarios(*listaUsuarios);
 
@@ -191,12 +280,12 @@ nodoUsuarios * crearNodoUsuario(stUsuario usuario)
 }
 
 nodoUsuarios *buscarUltimoNodoListaUsuarios(nodoUsuarios *lista)
- {
+{
     nodoUsuarios *aux = lista;
     if (aux != NULL)
     {
         while (aux->sig != NULL)
-         {
+        {
             aux = aux->sig;
         }
     }
@@ -222,7 +311,8 @@ stUsuario cargarContraseniaRegistro(stUsuario usuario)
     char contrasenia[30];
     char confirmacion[30];
 
-    do {
+    do
+    {
         printf("Ingrese su nueva contrasenia:  \n");
         fflush(stdin);
         gets(contrasenia);
@@ -240,7 +330,8 @@ stUsuario cargarContraseniaRegistro(stUsuario usuario)
             printf("La contrasenia debe tener al menos una mayuscula y una minuscula\n");
         }
 
-    } while (!validarContrasenia(contrasenia, confirmacion) || !validarMayusculaMinuscula(contrasenia));
+    }
+    while (!validarContrasenia(contrasenia, confirmacion) || !validarMayusculaMinuscula(contrasenia));
 
     strcpy(usuario.password, contrasenia);
 
@@ -295,6 +386,17 @@ int verificarEmailExistente(nodoUsuarios *listaUsuarios, char email[])
     return 0; /// devuelve 1 si el mail ya existe
 }
 
+int verificarDniExistente(nodoUsuarios *listaUsuarios, char *dni) {
+    nodoUsuarios *actual = listaUsuarios;
+
+    while (actual != NULL) {
+        if (strcmp(actual->datosUsuarios.dni, dni) == 0) {
+            return 1;
+        }
+        actual = actual->sig;
+    }
+    return 0;
+}
 
 void iniciarSesion(nodoUsuarios *listaUsuarios)
 {
@@ -310,19 +412,25 @@ void iniciarSesion(nodoUsuarios *listaUsuarios)
     fflush(stdin);
     gets(password);
 
-    if (strcmp(email, ADMIN_USERNAME) == 0 && strcmp(password, ADMIN_PASSWORD) == 0) {
+    if (strcmp(email, ADMIN_USERNAME) == 0 && strcmp(password, ADMIN_PASSWORD) == 0)
+    {
         printf("Inicio de sesion exitoso como administrador.\n");
         menuAdministrador();
         return;
     }
 
-    while (usuarioActual != NULL) {
-        if (strcmp(usuarioActual->datosUsuarios.email, email) == 0) {
-            if (strcmp(usuarioActual->datosUsuarios.password, password) == 0) {
+    while (usuarioActual != NULL)
+    {
+        if (strcmp(usuarioActual->datosUsuarios.email, email) == 0)
+        {
+            if (strcmp(usuarioActual->datosUsuarios.password, password) == 0)
+            {
                 printf("Inicio de sesion exitoso.\n");
                 menuPostLogin(usuarioActual);
                 return;
-            } else {
+            }
+            else
+            {
                 printf("Contrasenia incorrecta. Por favor, intente de nuevo.\n");
                 return;
             }
@@ -333,10 +441,12 @@ void iniciarSesion(nodoUsuarios *listaUsuarios)
     printf("No existe usuario con ese email.\n");
 }
 
-void menuAdministrador() {
+void menuAdministrador()
+{
     int opcion;
 
-    do {
+    do
+    {
         printf("\n=== MENU ADMINISTRADOR ===\n");
         printf("1. Ver usuarios\n");
         printf("2. Agregar usuario\n");
@@ -348,55 +458,58 @@ void menuAdministrador() {
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
 
-        switch (opcion) {
-            case 1:
-                elegirListaAVer(listaUsuarios);
-                system("pause");
-                system("cls");
-                break;
-            case 2:
-                registrarUsuario(&listaUsuarios);
-                system("pause");
-                system("cls");
-                break;
-            case 3:
-                bajaDelUsuario(listaUsuarios);
-                system("pause");
-                system("cls");
-                break;
-            case 4:
-                elegirListaAVerLibros(listaLibros);
-                system("pause");
-                system("cls");
-                break;
-            case 5:
-                listaLibros=cargarUnLibroManual(listaLibros);
-                system("pause");
-                system("cls");
-                break;
-            case 6:
-                listaLibros= bajaDelLibro(listaLibros);
-                system("pause");
-                system("cls");
-                break;
-            case 7:
-                guardarUsuariosEnArchivo(listaUsuarios);
-                guardarLibrosEnArchivo(listaLibros);
-                printf("Cerrando sesion...\n");
-                system("cls");
-                return;
-            default:
-                printf("Opcion no valida.\n");
-                break;
+        switch (opcion)
+        {
+        case 1:
+            elegirListaAVer(listaUsuarios);
+            system("pause");
+            system("cls");
+            break;
+        case 2:
+            registrarUsuario(&listaUsuarios);
+            system("pause");
+            system("cls");
+            break;
+        case 3:
+            bajaDelUsuario(listaUsuarios);
+            system("pause");
+            system("cls");
+            break;
+        case 4:
+            elegirListaAVerLibros(listaLibros);
+            system("pause");
+            system("cls");
+            break;
+        case 5:
+            listaLibros=cargarUnLibroManual(listaLibros);
+            system("pause");
+            system("cls");
+            break;
+        case 6:
+            listaLibros= bajaDelLibro(listaLibros);
+            system("pause");
+            system("cls");
+            break;
+        case 7:
+            guardarUsuariosEnArchivo(listaUsuarios);
+            guardarLibrosEnArchivo(listaLibros);
+            printf("Cerrando sesion...\n");
+            system("cls");
+            return;
+        default:
+            printf("Opcion no valida.\n");
+            break;
         }
-    } while (opcion != 7);
+    }
+    while (opcion != 7);
 }
 
 void menuPostLogin(nodoUsuarios *usuarioLogueado)
 {
     int opcion;
 
-    do {
+    do
+    {
         printf("\n=== MENU POST LOGIN ===\n");
         printf("1. Modificar informacion personal\n");
         printf("2. Menu de libros\n");
@@ -404,29 +517,32 @@ void menuPostLogin(nodoUsuarios *usuarioLogueado)
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
 
-        switch (opcion) {
-            case 1:
-                system("cls");
-                modificarInformacionPersonal(usuarioLogueado);
-                break;
-            case 2:
-                system("cls");
-                menuLibros(usuarioLogueado,listaLibros);
-                break;
-            case 3:
-                guardarUsuariosEnArchivo(listaUsuarios);
-                printf("Cerrando sesion...\n");
-                system("cls");
-                return;
-            default:
-                printf("Opcion no valida.\n");
-                break;
+        switch (opcion)
+        {
+        case 1:
+            system("cls");
+            modificarInformacionPersonal(usuarioLogueado);
+            break;
+        case 2:
+            system("cls");
+            menuLibros(usuarioLogueado,listaLibros);
+            break;
+        case 3:
+            guardarUsuariosEnArchivo(listaUsuarios);
+            printf("Cerrando sesion...\n");
+            system("cls");
+            return;
+        default:
+            printf("Opcion no valida.\n");
+            break;
         }
-    } while (opcion != 3);
+    }
+    while (opcion != 3);
 }
 
 void modificarInformacionPersonal(nodoUsuarios* usuario)
 {
+    char mail[100];
     int opcion;
     do
     {
@@ -441,10 +557,28 @@ void modificarInformacionPersonal(nodoUsuarios* usuario)
         switch(opcion)
         {
         case 1:
-            printf("Ingrese nuevo email: ");
-            fflush(stdin);
-            gets(usuario->datosUsuarios.email);
-            printf("Email actualizado.\n");
+            do
+            {
+                printf("Ingrese nuevo email: ");
+                fflush(stdin);
+                gets(mail);
+
+                if (!validarMail(mail))
+                {
+                    printf("El formato del email no es valido. Asegurese de incluir un '@' y un '.com'\n");
+                }
+                else if (verificarEmailExistente(listaUsuarios, mail))
+                {
+                    printf("El email ingresado ya existe. Intente nuevamente.\n");
+                }
+                else
+                {
+                    strcpy(usuario->datosUsuarios.email, mail);
+                    printf("Email actualizado correctamente.\n");
+                    break;  // Sale del ciclo una vez que el email es válido y actualizado
+                }
+            }
+            while (1);
             system("pause");
             system("cls");
             break;
@@ -506,7 +640,7 @@ void menuLibros(nodoUsuarios * usuarioLogueado, nodoLibros * listaLibros)
             aux=buscarLibroPorAutor(listaLibros);
             mostrarListaLibros(aux);
             system("pause");
-           system("cls");
+            system("cls");
             break;
         case 3:
             aux=buscarLibroPorTitulo(listaLibros);
@@ -539,16 +673,19 @@ void menuLibros(nodoUsuarios * usuarioLogueado, nodoLibros * listaLibros)
 }
 
 
-void guardarUsuariosEnArchivo(nodoUsuarios *listaUsuarios) {
+void guardarUsuariosEnArchivo(nodoUsuarios *listaUsuarios)
+{
     FILE *archivo = fopen(ARCHIVO_USUARIOS, "wb");
-    if (!archivo) {
+    if (!archivo)
+    {
         printf("Error al abrir el archivo de usuarios.\n");
         return;
     }
 
     nodoUsuarios *aux = listaUsuarios;
 
-    while (aux != NULL) {
+    while (aux != NULL)
+    {
         fwrite(&aux->datosUsuarios, sizeof(stUsuario), 1, archivo);
         aux = aux->sig;
     }
@@ -556,16 +693,19 @@ void guardarUsuariosEnArchivo(nodoUsuarios *listaUsuarios) {
     fclose(archivo);
 }
 
-void guardarLibrosEnArchivo(nodoLibros *listaLibros) {
+void guardarLibrosEnArchivo(nodoLibros *listaLibros)
+{
     FILE *archivo = fopen(ARCHIVO_LIBROS, "wb");
-    if (!archivo) {
+    if (!archivo)
+    {
         printf("Error al abrir el archivo de libros.\n");
         return;
     }
 
     nodoLibros *aux = listaLibros;
 
-    while (aux != NULL) {
+    while (aux != NULL)
+    {
         fwrite(&aux->datosLibros, sizeof(stLibro), 1, archivo);
         aux = aux->sig;
     }

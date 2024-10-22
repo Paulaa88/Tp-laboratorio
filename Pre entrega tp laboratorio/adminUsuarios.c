@@ -445,7 +445,7 @@ void mostrarUnLibro(nodoLibros* listaLibros)
         printf("Editorial: %s\n", listaLibros->datosLibros.editorial);
         printf("Autor: %s\n", listaLibros->datosLibros.autor);
         printf("Categoria: %s\n", listaLibros->datosLibros.categoria);
-        printf("Valoracion: %f %d\n", listaLibros->datosLibros.valoracion);
+        printf("Valoracion: %f\n", listaLibros->datosLibros.valoracion);
         printf("\n -----------------------\n");
 
     }

@@ -32,6 +32,8 @@ int verificarUsuarioExistente(nodoUsuarios *listaUsuarios, char username[]);
 int verificarEmailExistente(nodoUsuarios *listaUsuarios, char email[]);
 void guardarLibrosEnArchivo(nodoLibros *listaLibros);
 void guardarUsuariosEnArchivo(nodoUsuarios *listaUsuarios);
+int validarLongitudDni(char dni[]);
+int verificarDniExistente(nodoUsuarios* listaUsuarios, char nuevoDni[]);
 
 
 

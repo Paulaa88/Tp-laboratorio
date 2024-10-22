@@ -98,28 +98,26 @@ int validarContrasenia(char password[], char password1[])
     return 0;
 }
 
-
-///6. ENCONTRAR USUARIO
-/*int encontrarUsuario (nodoUsuarios * usu, char nombre[], char contra[])
-{
-    nodoUsuarios* aux=usu;
-    int flag=0;
-    while (usu->sig!=NULL && flag==0)
-    {
-        if (strcmp(nombre,aux->stUsuario.username)==0)
-            flag=contrastarContra(aux, contra);
-        else
-            aux=aux->sig;
-        return flag;
+int validarFechaNacimiento(char *fecha) {
+    int dia, mes, anio;
+    if (sscanf(fecha, "%d/%d/%d", &dia, &mes, &anio) == 3) {
+        if (dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && anio >= 1900 && anio <= 2024) {
+            return 1;  // Fecha válida
+        }
     }
+    return 0;  // Fecha no válida
 }
 
-///7.COMPARA CONTRASEÑA
-int contrastarContra (nodoUsuarios* aux, char contra[])
-{
-    if (strcmp(aux.>stUsuario.password,contra)==0)
-        return 2;
-    else
-        return 1;
+int validarGenero(char genero) {
+    genero = toupper(genero);  // Convierte a mayúscula para evitar problemas con minúsculas
+    return (genero == 'M' || genero == 'F' || genero == 'O');
 }
-*/
+
+int validarAltura(char *alturaStr) {
+    for (int i = 0; i < strlen(alturaStr); i++) {
+        if (!isdigit(alturaStr[i])) {
+            return 0;  // Si encuentra un carácter no numérico, no es válido
+        }
+    }
+    return atoi(alturaStr) > 0;  // Asegura que sea un número mayor que 0
+}

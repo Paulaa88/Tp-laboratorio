@@ -448,3 +448,132 @@
 1729033778 source:c:\users\paula\desktop\pre entrega tp laboratorio\validaciones.c
 	"Validaciones.h"
 
+1729290106 source:c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\adminusuarios.c
+	"adminUsuarios.h"
+
+1729273033 c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1729033756 c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729274772 source:c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\libros.c
+
+1729287268 source:c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"menu.h"
+
+1729287256 c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	"adminUsuarios.h"
+
+1729287156 source:c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\menu.c
+	"menu.h"
+
+1729033778 source:c:\users\paula\desktop\pre entrega tp laboratorio\pre entrega tp laboratorio\validaciones.c
+	"Validaciones.h"
+
+1729290106 source:c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\adminusuarios.c
+	"adminUsuarios.h"
+
+1729273033 c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1729033756 c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729274772 source:c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\libros.c
+
+1729287268 source:c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"menu.h"
+
+1729502923 c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	"adminUsuarios.h"
+
+1729503509 source:c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\menu.c
+	"menu.h"
+
+1729033778 source:c:\users\paula\desktop\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\bookmaster lucas herrero, paula fernandez, maria fernanda moyano,  regina perez\pre entrega tp laboratorio\validaciones.c
+	"Validaciones.h"
+
+1729290106 source:c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\adminusuarios.c
+	"adminUsuarios.h"
+
+1729273033 c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\adminusuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1729033756 c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1729274772 source:c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\libros.c
+
+1729598948 source:c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"menu.h"
+
+1729502923 c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<string.h>
+	"adminUsuarios.h"
+
+1729602676 source:c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\menu.c
+	"menu.h"
+
+1729602125 source:c:\users\paula\documents\github\tp-laboratorio\pre entrega tp laboratorio\validaciones.c
+	"Validaciones.h"
+

@@ -115,4 +115,6 @@ void cargarLibrosAleatorios(int cantidad) {
     printf("Se cargaron %d libros aleatorios exitosamente.\n", cantidad);
 }
 
+/// //////////////////////////// FALTA ///////////////////////////////////////////
 
+/// * VALIDACIONES DE SOLO NUMEROS EN ALTURA, DE M, F U O EN GENERO,
